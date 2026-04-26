@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo+Black&family=Bebas+Neue&family=Bitcount+Prop+Double+Ink:wght@100..900&family=Caveat:wght@400..700&family=Fjalla+One&family=Google+Sans+Code:ital,wght,MONO@0,300..800,1;1,300..800,1&family=Grechen+Fuemen&family=Inconsolata:wght@200..900&family=Ramabhadra&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/certificate.css">
+    <title>Portfolio</title>
+</head>
+<body>
+
+<section class="hero">
+
+    <!-- LEFT SIDEBAR -->
+    <aside class="hero-content">
+        <div class="hero-img">
+            <img src="assets/img/profile.JPG" alt="Profile Picture" class="profile-img">
+        </div>
+
+        <h1 class="profile-name">Kenneth L. Nagsuban</h1>
+
+        <div class="hero-expertise">
+            <img src="assets/icon/expertise tools.png" class="icon-img">
+            <p class="expertise">Expertise</p>
+        </div>
+
+        <div class="hero-skills">
+            <p>Website Developer</p>
+            <p>Graphic Designer</p>
+            <p>IT Support Specialist</p>
+        </div>
+
+        <div class="status-pill">
+            <span class="status-dot"></span>
+            Available to Work
+        </div>
+    </aside>
+
+
+    <!-- RIGHT SIDE -->
+    <div class="right-side">
+
+        <!-- NAVIGATION (TOP) -->
+        <aside class="nav">
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="education.html">Education</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="certificate.html">Certificate</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </aside>
+        
+                 <!---- right panel Home nav ---->
+        <div class="right-panel">
+
+        <h2 class="section-title">Certificates</h2>
+
+        <!-- FILTER BUTTONS -->
+        <div class="button">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="tesda">TESDA - Cert</button>
+            <button class="filter-btn" data-filter="ccna">CCNA - Cert</button>
+            <button class="filter-btn" data-filter="w3school">W3School - Cert</button>
+            <button class="filter-btn" data-filter="dict">DICT - Cert.</button>
+        </div>
+
+        <!-- GALLERY -->
+        <div class="gallery">
+
+            <!-- CARD -->
+            <div class="gallery-item" data-category="tesda">
+                <img src="assets/img/NC.png" class="gallery-img">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">Computer System Servicing - Certificate</h3>
+                    <p class="gallery-desc">Build powerful applications.</p>
+                </div>
+                <p class="skill-tag">Skills</p>
+                <div class="learn">
+                    <span class="learn1">Troubleshooting,</span>
+                    <span class="learn1">Server Management,</span>
+                    <span class="learn1">Server Instalation,</span>
+                    <span class="learn1">DHCP.</span>
+                </div>
+            </div>
+
+            <!-- <div class="gallery-item" data-category="ccna">
+                <img src="assets/skills/c-sharp.png" class="gallery-img">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">WEB DEVELOPMENT</h3>
+                    <p class="gallery-desc">Modern responsive websites.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="w3school">
+                <img src="assets/skills/python.png" class="gallery-img">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">GRAPHIC DESIGN</h3>
+                    <p class="gallery-desc">Creative visual designs.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="dict"> 
+                <img src="assets/skills/c-sharp.png" class="gallery-img">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">Game Development</h3>
+                    <p class="gallery-desc">Create engaging video games.</p>
+                </div>
+            </div> -->
+
+        </div>
+
+    </div>
+</div>
+
+<!-- IMAGE MODAL -->
+<div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImg">
+</div>
+            
+        </div>
+ 
+       </aside>
+
+   
+    </section>
+    
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2026 Kenneth L. Nagsuban. All rights reserved.</p>
+    </footer>
+    </section>
+
+<script src="assets/js/modal.js"></script>
+</body>
+</html>

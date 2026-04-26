@@ -1,0 +1,95 @@
+/*container*/
+.contact {
+    /* display: block; */
+    /* flex-direction: column; */
+
+    /* padding-top: 10px ; */
+    gap: 100px;
+} 
+
+.title {
+    margin-top: 10px;
+    width: 80px;
+    font-weight: 900; 
+}
+
+.facebook img{
+    /* display: flex; */
+    padding: 10px;
+    gap: 10px;
+    width: 60px;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 10px 10px;
+    transition: all 0.3s ease;
+}
+
+.facebook img:hover {
+    cursor: pointer;
+    transform: translateY(-5px);
+    box-shadow: 3px 15px 100px rgba(0,0,0,0.3);
+    background-color: rgb(14, 139, 255);
+    /* color: white; */
+    text-shadow: 2px 2px 5px black
+}
+
+.email img{
+    /* display: flex; */
+    padding: 10px;
+    gap: 10px;
+    width: 60px;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 10px 10px;
+    transition: all 0.3s ease;
+}
+
+.email img:hover {
+    cursor: pointer;
+    transform: translateY(-5px);
+    box-shadow: 3px 15px 100px rgba(0,0,0,0.3);
+    background-color: rgb(14, 139, 255);
+    color: white; 
+    text-shadow: 2px 2px 5px black
+}
+
+.viber img {
+    /* display: flex; */
+    padding: 10px;
+    gap: 10px;
+    width: 60px;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 10px 10px;
+    transition: all 0.3s ease;
+}
+
+.viber img:hover {
+    cursor: pointer;
+    transform: translateY(-5px);
+    box-shadow: 3px 15px 100px rgba(0,0,0,0.3);
+    background-color: rgb(14, 139, 255);
+    color: white;
+    text-shadow: 2px 2px 5px black
+}
+
+.linkedin img {
+    /* display: flex; */
+    padding: 10px;
+    width: 70px;
+    gap: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 10px 10px;
+    transition: all 0.3s ease;
+}
+
+.linkedin img:hover {
+    cursor: pointer;
+    transform: translateY(-5px);
+    box-shadow: 3px 15px 100px rgba(0,0,0,0.3);
+    background-color: rgb(14, 139, 255);
+    color: white;
+    text-shadow: 2px 2px 5px black;
+    
+}

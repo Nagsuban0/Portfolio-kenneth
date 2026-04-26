@@ -1,0 +1,347 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================
+   MAIN LAYOUT
+========================= */
+.hero {
+    display: flex;
+    flex: 1;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+/* LEFT SIDEBAR */
+.hero-content {
+    flex: 0 0 200px;
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-right: 0.5px solid #333;
+    border-radius: 10px;
+}
+
+/* RIGHT SIDE WRAPPER */
+.right-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================
+   PROFILE SECTION
+========================= */
+.hero-img {
+    display: flex;
+    justify-content: center;
+}
+
+.profile-img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+    border: 2px solid #333;
+    box-shadow: #278cff 0px 4px 8px, #000000 0px 1px 1px;
+    transition: 0.3s;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    box-shadow: #05f390 0px 4px 8px;
+}
+
+.profile-name {
+    font-size: 21px;
+    margin: 20px 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* EXPERTISE */
+.hero-expertise {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.icon-img {
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+    margin-left: 60px;
+}
+
+.expertise {
+    font-size: 19px;
+    font-weight: bold;
+}
+
+/* SKILLS */
+.hero-skills {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+.hero-skills p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* STATUS */
+.status-pill {
+    display: flex;
+    align-items: center;
+    justify-content: center;   /*  centers content nicely */
+    gap: 7px;
+
+    padding: 6px 12px;
+    background: rgba(225,255,225,0.5);
+    border: 1px solid #184418;
+    border-radius: 100px;
+    box-shadow: 5px 5px;
+
+    font-size: 14px;
+    margin-top: 12px;
+
+    width: fit-content;        /*  prevents stretching */
+    margin-left: auto;         /*  centers horizontally */
+    margin-right: auto;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #184418;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.status-pill:hover {
+    background-color: rgb(13, 32, 13);
+    color: white;
+    cursor: pointer;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+.nav {
+    display: flex;
+    list-style: none;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    margin-top: 5px;
+
+    background: rgba(255, 255, 255, 0.15);  /* semi-transparent */
+    backdrop-filter: blur(12px);            /* ✅ blur effect */
+    -webkit-backdrop-filter: blur(12px);    /* Safari support */
+
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.1); */
+    /* border-radius: 100px; */
+}
+
+.nav-menu {
+    display: block;
+}
+
+.nav-menu ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    border-radius: 100px;
+    border: 1px solid #000;
+}
+
+.nav-menu li a {
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #333;
+    border-radius: 100px;
+}
+
+.nav-menu li a:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* =========================
+   RIGHT PANEL
+========================= */
+.right-panel {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 1000px;
+    width: 100%;
+    margin: 20px 0;
+    padding: 20px;
+
+    border: 1px solid #000;
+    border-radius: 15px;
+    background: #f0f0f0;
+    box-shadow: 10px 10px;
+}
+
+/* CONTENT HEADER */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* TEXT */
+.home-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.home-content h2 {
+    font-size: 34px;
+    border-bottom: 1px solid #c2c2c2;
+    padding-bottom: 2px;
+}
+
+/* ARROW */
+.section-subject::after {
+    content: " ↓";
+    margin-left: 8px;
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(5px); }
+}
+
+.section-description {
+    font-size: 16px;
+    line-height: 2;
+}
+
+/* IMAGES */
+.home-images {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.home-img {
+    width: 190px;
+    height: 190px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 50%;
+    border: 2px solid #04aff3;
+    transition: 0.3s;
+}
+
+.home-img:hover {
+    transform: scale(1.05);
+}
+
+/* /* =========================
+   MODAL
+========================= */
+/* .modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.9);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain; /* keeps aspect ratio 
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 32px;
+    color: #fff;
+    cursor: pointer;
+} */ 
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    width: 100%;
+}
+
+.footer:hover {
+    background-color: #000;
+    cursor: pointer;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+    }
+
+    .nav {
+        flex-direction: column;
+    }
+
+    .hero-content {
+        border-right: none;
+        border-bottom: 1px solid #ccc;
+        width: 100%;
+    }
+
+    .right-side {
+        flex-direction: column;
+    }
+
+    .right-panel {
+        margin: 10px;
+    }
+
+    .section-header {
+        flex-direction: column;
+    }
+
+    .home-images {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
