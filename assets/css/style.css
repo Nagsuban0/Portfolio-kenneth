@@ -355,9 +355,15 @@ body {
 
     /* NAVIGATION */
     .nav {
+        display: block;
         flex-direction: column;
         align-items: center;
         padding: 10px 0;
+        background: rgba(255, 255, 255, 0.15); /* semi-transparent */
+        backdrop-filter: blur(12px); 
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid black;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
 
     .nav-menu ul {
@@ -395,9 +401,12 @@ body {
 
     /* ICON FIX */
     .icon-img {
-        margin-left: 0;
+        margin-left: 140px;
     }
 
+    .expertise {
+        margin-left: 3px;
+    }
     /* TEXT CENTER FIX */
     .home-content h2 {
         font-size: 26px;
