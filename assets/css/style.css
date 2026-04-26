@@ -50,6 +50,7 @@ body {
 }
 
 .profile-img {
+    display: inline-block;
     width: 250px;
     height: 250px;
     border-radius: 50%;
@@ -58,12 +59,25 @@ body {
     border: 2px solid #333;
     box-shadow: #278cff 0px 4px 8px, #000000 0px 1px 1px;
     transition: 0.3s;
+    animation: bounce 1.2s infinite;
 }
 
 .profile-img:hover {
     transform: scale(1.05);
     cursor: pointer;
     box-shadow: #05f390 0px 4px 8px;
+}
+
+@keyframes profile-img {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-12px);
+    }
+    60% {
+        transform: translateY(-6px);
+    }
 }
 
 .profile-name {
@@ -81,10 +95,22 @@ body {
 }
 
 .icon-img {
+    display: inline-block;
     width: 25px;
     height: 25px;
     margin-right: 5px;
     margin-left: 60px;
+
+    animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .expertise {
