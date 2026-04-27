@@ -43,3 +43,34 @@ modal.onclick = (e) => {
         modal.style.display = "none";
     }
 };
+
+
+
+
+function toggleDarkMode() {
+    document.body.classList.toggle("dark");
+
+    const btn = document.getElementById("darkToggle");
+    if (!btn) return;
+
+    if (document.body.classList.contains("dark")) {
+        localStorage.setItem("theme", "dark");
+        btn.textContent = "☀️"; // sun
+    } else {
+        localStorage.setItem("theme", "light");
+        btn.textContent = "🌙"; // moon
+    }
+}
+
+// load saved theme
+window.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("darkToggle");
+    if (!btn) return;
+
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark");
+        btn.textContent = "☀️";
+    } else {
+        btn.textContent = "🌙";
+    }
+});

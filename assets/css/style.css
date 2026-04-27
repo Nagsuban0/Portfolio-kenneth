@@ -1,3 +1,18 @@
+:root {
+    --bg: #f0f0f0;
+    --text: #333;
+    --card: #f0f0f0;
+    --border: #333;
+}
+
+/* DARK MODE */
+body.dark {
+    --bg: #121212;
+    --text: #f5f5f5;
+    --card: #1e1e1e;
+    --border: #444;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,11 +21,12 @@
 
 body {
     font-family: 'Roboto Mono', monospace;
-    background-color: #f0f0f0;
-    color: #333;
+    background-color: var(--bg);
+    color: var(--text);
     line-height: 1.6;
     display: flex;
     flex-direction: column;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 /* =========================
@@ -44,9 +60,11 @@ body {
 /* =========================
    PROFILE SECTION
 ========================= */
+/* container handles sticky */
 .hero-img {
-    display: flex;
-    justify-content: center;
+    position: relative;
+    top: 10px;
+    z-index: 1000;
 }
 
 .profile-img {
@@ -58,26 +76,20 @@ body {
     object-position: top;
     border: 2px solid #333;
     box-shadow: #278cff 0px 4px 8px, #000000 0px 1px 1px;
-    transition: 0.3s;
     animation: bounce 1.2s infinite;
+    transition: all 0.3s ease;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-12px); }
+    60% { transform: translateY(-6px); }
 }
 
 .profile-img:hover {
     transform: scale(1.05);
     cursor: pointer;
     box-shadow: #05f390 0px 4px 8px;
-}
-
-@keyframes profile-img {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-12px);
-    }
-    60% {
-        transform: translateY(-6px);
-    }
 }
 
 .profile-name {
@@ -96,10 +108,10 @@ body {
 
 .icon-img {
     display: inline-block;
-    width: 25px;
-    height: 25px;
+    width: 35px;
+    height: 35px;
     margin-right: 5px;
-    margin-left: 60px;
+    margin-left: 30px;
 
     animation: spin 5s linear infinite;
 }
@@ -150,6 +162,13 @@ body {
     width: fit-content;        /*  prevents stretching */
     margin-left: auto;         /*  centers horizontally */
     margin-right: auto;
+    animation: bounce1 2.2s infinite;
+}
+
+@keyframes bounce1 {
+    0%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-16px); }
+    60% { transform: translateY(-6px); }
 }
 
 .status-dot {
@@ -166,6 +185,8 @@ body {
     cursor: pointer;
 }
 
+
+
 /* =========================
    NAVIGATION
 ========================= */
@@ -175,6 +196,9 @@ body {
     top: 0;
     z-index: 1000;
     width: fit-content;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
 
     /* display: flex; */
     /* flex-direction: column; */
@@ -183,7 +207,9 @@ body {
 
     padding: 10px 20px;
 
-    background: rgba(255, 255, 255, 0.15);
+    background: var(--card);
+    border: 1px solid var(--border);
+
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
 
@@ -191,13 +217,6 @@ body {
     border-radius: 100px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2),
                 0 6px 20px rgba(0,0,0,0.19);
-}
-
-/* when scrolling */
-.nav.shrink {
-    padding: 8px 0;
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .nav-menu {
@@ -210,10 +229,11 @@ body {
     /* justify-content: center; */
     /* align-items: center; */
 
-    gap: 10px;
+    gap: 20px;
 
     /* width: auto; */
     list-style: none;
+    align-items: center;
 }
 
 .nav-menu li a {
@@ -221,7 +241,7 @@ body {
     display: block;
     padding: 8px 16px;
     text-decoration: none;
-    color: #333;
+    color: #5a5959;
     border-radius: 100px;
     transition: 0.3s ease;
 }
@@ -245,6 +265,30 @@ body {
     background: black;
 }
 
+/* =========================
+   DARKMODE TOGGLE
+========================= */
+.dark-toggle {
+    cursor: pointer;
+    font-size: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 36px; /* keeps it perfectly round */
+
+    border-radius: 50%;
+    transition: all 0.3s ease;
+
+    user-select: none; /* prevents text selection */
+}
+
+.dark-toggle:hover {
+    background: rgba(0,0,0,0.1);
+    transform: scale(1.1);
+}
 
 /* =========================
    RIGHT PANEL
@@ -258,9 +302,9 @@ body {
     margin: 20px 0;
     padding: 20px;
 
-    border: 1px solid #000;
+    border: 1px solid var(--border);
     border-radius: 15px;
-    background: #f0f0f0;
+    background: var(--card);
     box-shadow: 10px 10px;
 }
 
@@ -288,12 +332,13 @@ body {
 .section-subject::after {
     content: " ↓";
     margin-left: 8px;
-    animation: bounce 1s infinite;
+    animation: bounce2 1s infinite;
 }
 
-@keyframes bounce {
-    0%,100% { transform: translateY(0); }
-    50% { transform: translateY(5px); }
+@keyframes bounce2 {
+    0%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-16px); }
+    60% { transform: translateY(-6px); }
 }
 
 .section-description {
@@ -387,9 +432,9 @@ body {
     .hero-content {
         flex: none;
         width: 100%;
-
-        padding: 20px; /* FIX: removes 100px issue */
-        border-right: none;
+        background: var(--card);
+        padding: 20px; 
+        border-right: 0.5px solid var(--border);
         border-bottom: 1px solid #ccc;
         border-radius: 0;
     }
@@ -407,12 +452,12 @@ body {
 
 
     /* NAVIGATION */
-.nav {
+    .nav {
     display: flex;
     justify-content: flex-end; /* MOVE EVERYTHING RIGHT */
     align-items: center;
 
-    margin-left: 80%;
+    margin-left: 70%;
     padding: 10px 15px;
     border-radius: 10px;
 
@@ -421,7 +466,7 @@ body {
 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2),
                 0 6px 20px rgba(0, 0, 0, 0.19);
-}
+    }
 
     /* SHOW BURGER */
     .burger {
@@ -437,7 +482,9 @@ body {
         left: 0;
 
         /* width: 100%; */
-        background: rgb(202, 201, 201);
+        background: var(--bg);
+        border-radius: 10px;
+        box-shadow: 5px 5px var(--text);
     }
 
     /* STACK MENU ITEMS */
@@ -445,8 +492,8 @@ body {
         display: flex;
         flex-direction: column;
         text-align: center;
-                /* justify-content: flex-start; */
-        margin-right: 10%;
+        /* justify-content: flex-start; */
+        /* margin-right: 10%; */
         width: 100%; /* FIXED missing ; */
         gap: 5px;
     }
@@ -490,7 +537,7 @@ body {
 
     /* ICON FIX */
     .icon-img {
-        margin-left: 140px;
+        margin-left: 110px;
     }
 
     .expertise {
@@ -506,4 +553,6 @@ body {
         text-align: center;
         font-size: 15px;
     }
+    
+
 }

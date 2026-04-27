@@ -47,6 +47,9 @@
 <!-- NAVIGATION (TOP) -->
 <aside class="nav">
 
+        <!-----PROFILE IMAGE------->
+<div class="nav-profile-slot"></div>
+
     <!-- BURGER BUTTON -->
     <div class="burger" onclick="toggleMenu()">
         <span></span>
@@ -63,7 +66,7 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
-
+<div class="dark-toggle" onclick="toggleDarkMode()">🌙</div>
 </aside>
 
 
@@ -208,12 +211,13 @@
 
    
     </section>
+    <script src="assets/js/modal.js"></script>
     <script>
-function toggleMenu() {
+    function toggleMenu() {
     const menu = document.querySelector(".nav-menu");
     menu.classList.toggle("active");
-}
-</script>
+    }
+    </script>
     
     <!-- FOOTER -->
     <footer class="footer">

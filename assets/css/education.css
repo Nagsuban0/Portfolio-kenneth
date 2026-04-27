@@ -9,7 +9,6 @@
 }
 
 .section-label {
-    
     font-size: 28px;
 }
 
@@ -18,7 +17,6 @@
     height: 1px;
     background: gray;
 }
-
 
 /* ===== PERSONAL INFO GRID ===== */
 .info-grid {
@@ -65,6 +63,7 @@
     flex-direction: column;
     gap: 0;
     padding-left: 4px;
+    color: var(--text);
 }
 
 .timeline-item {
@@ -107,16 +106,20 @@
     padding-bottom: 4px;
 }
 
+.timeline-year,
+.timeline-title,
+.timeline-place {
+    color: var(--text);
+}
+
 .timeline-year {
     font-size: 11px;
-    color: rgb(12, 12, 12);
     letter-spacing: 0.05em;
 }
 
 .timeline-title {
     font-size: 14px;
     font-weight: 500;
-    color: rgb(0, 0, 0);
     display: flex;
     align-items: center;
     gap: 8px;
@@ -125,7 +128,6 @@
 
 .timeline-place {
     font-size: 12px;
-    color: rgb(8, 8, 8);
     font-weight: 400;
 }
 
@@ -153,7 +155,6 @@
     border: 1px solid rgb(146, 146, 146);
     border-radius: 100px;
     letter-spacing: 0.04em;
-    font-style: normal;
 }
 
 .role-badge:hover {
@@ -174,9 +175,8 @@
     border: 1px solid rgb(145, 145, 145);
     border-radius: 6px;
     padding: 4px 10px;
-    letter-spacing: 0.04em;
     background: gray;
-    transition: border-color 0.2s;
+    transition: 0.2s;
 }
 
 .skill-tag:hover {
@@ -184,17 +184,12 @@
     color: white;
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 1024px) {
-    .info-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-}
+/* =========================
+   RESPONSIVE
+========================= */
 
-@media (max-width: 768px) {
-    .right-panel {
-        padding: 36px 24px;
-    }
+/* TABLET */
+@media (max-width: 1024px) {
 
     .info-grid {
         grid-template-columns: 1fr 1fr;
@@ -206,148 +201,51 @@
     }
 }
 
-@media (max-width: 480px) {
+/* MOBILE */
+@media (max-width: 768px) {
+
+    /* SECTION HEADER */
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .section-label {
+        font-size: 22px;
+    }
+
+    /* INFO GRID */
     .info-grid {
         grid-template-columns: 1fr;
+    }
+
+    /* TIMELINE */
+    .timeline {
+        padding-left: 0;
+    }
+
+    .timeline-item {
+        gap: 12px;
     }
 
     .timeline-title {
         font-size: 13px;
     }
-}
 
-/* =========================
-   RESPONSIVE
-========================= */
-@media (max-width: 768px) {
-     /* MAIN LAYOUT */
-    .hero {
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
+    .timeline-desc {
+        font-size: 11px;
     }
 
-    /* LEFT SIDEBAR */
-    .hero-content {
-        flex: none;
-        width: 100%;
-
-        padding: 20px; /* FIX: removes 100px issue */
-        border-right: none;
-        border-bottom: 1px solid #ccc;
-        border-radius: 0;
+    /* BADGES */
+    .role-badge {
+        font-size: 10px;
+        padding: 2px 7px;
     }
 
-    /* RIGHT SIDE */
-    .right-side {
-        width: 100%;
-    }
-
-    .right-panel {
-        margin: 10px;
-        width: auto;
-        box-shadow: 5px 5px;
-    }
-
-
-    /* NAVIGATION */
-.nav {
-    display: flex;
-    justify-content: flex-end; /* MOVE EVERYTHING RIGHT */
-    align-items: center;
-
-    margin-left: 80%;
-    padding: 10px 15px;
-    border-radius: 10px;
-
-    backdrop-filter: blur(12px); 
-    -webkit-backdrop-filter: blur(12px);
-
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2),
-                0 6px 20px rgba(0, 0, 0, 0.19);
-}
-
-    /* SHOW BURGER */
-    .burger {
-        display: flex;
-    }
-
-    /* HIDE MENU BY DEFAULT */
-    .nav-menu {
-        display: none;
-
-        position: absolute;
-        top: 50px;
-        left: 0;
-
-        /* width: 100%; */
-        background: rgb(202, 201, 201);
-    }
-
-    /* STACK MENU ITEMS */
-    .nav-menu ul {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-                /* justify-content: flex-start; */
-        margin-right: 10%;
-        width: 100%; /* FIXED missing ; */
-        gap: 5px;
-    }
-
-    .nav-menu li a {
-        padding: 10px;
-        display: block;
-        width: 100%;
-    }
-
-    /* SHOW WHEN ACTIVE */
-    .nav-menu.active {
-        display: flex;
-        flex-direction: column;
-        margin-left: -100%;
-    }
-
-    /* SECTION HEADER */
-    .section-header {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    /* PROFILE IMAGE */
-    .profile-img {
-        width: 180px;
-        height: 180px;
-    }
-
-    /* HOME IMAGES */
-    .home-images {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .home-img {
-        width: 130px;
-        height: 130px;
-    }
-
-    /* ICON FIX */
-    .icon-img {
-        margin-left: 140px;
-    }
-
-    .expertise {
-        margin-left: 3px;
-    }
-    /* TEXT CENTER FIX */
-    .home-content h2 {
-        font-size: 26px;
-        text-align: center;
-    }
-
-    .section-description {
-        text-align: center;
-        font-size: 15px;
+    /* TAGS */
+    .skill-tag {
+        font-size: 10px;
+        padding: 3px 8px;
     }
 }

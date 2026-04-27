@@ -45,15 +45,16 @@
     <!-- RIGHT SIDE -->
     <div class="right-side">
 
+
 <!-- NAVIGATION (TOP) -->
 <aside class="nav">
 
-    <!-- BURGER BUTTON -->
     <div class="burger" onclick="toggleMenu()">
         <span></span>
         <span></span>
         <span></span>
     </div>
+
 
     <nav class="nav-menu" id="navMenu">
         <ul>
@@ -64,9 +65,10 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
-
+    <div class="dark-toggle" onclick="toggleDarkMode()" id="darkToggle">
+    🌙
+</div>
 </aside>
-
 
         <!-- MAIN CONTENT -->
         <div class="right-panel">
@@ -114,6 +116,9 @@ function toggleMenu() {
     const menu = document.querySelector(".nav-menu");
     menu.classList.toggle("active");
 }
+</script>
+<script>
+
 </script>
 
 </body>
