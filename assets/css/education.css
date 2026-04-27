@@ -215,3 +215,139 @@
         font-size: 13px;
     }
 }
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+     /* MAIN LAYOUT */
+    .hero {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    /* LEFT SIDEBAR */
+    .hero-content {
+        flex: none;
+        width: 100%;
+
+        padding: 20px; /* FIX: removes 100px issue */
+        border-right: none;
+        border-bottom: 1px solid #ccc;
+        border-radius: 0;
+    }
+
+    /* RIGHT SIDE */
+    .right-side {
+        width: 100%;
+    }
+
+    .right-panel {
+        margin: 10px;
+        width: auto;
+        box-shadow: 5px 5px;
+    }
+
+
+    /* NAVIGATION */
+.nav {
+    display: flex;
+    justify-content: flex-end; /* MOVE EVERYTHING RIGHT */
+    align-items: center;
+
+    margin-left: 80%;
+    padding: 10px 15px;
+    border-radius: 10px;
+
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px);
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2),
+                0 6px 20px rgba(0, 0, 0, 0.19);
+}
+
+    /* SHOW BURGER */
+    .burger {
+        display: flex;
+    }
+
+    /* HIDE MENU BY DEFAULT */
+    .nav-menu {
+        display: none;
+
+        position: absolute;
+        top: 50px;
+        left: 0;
+
+        /* width: 100%; */
+        background: rgb(202, 201, 201);
+    }
+
+    /* STACK MENU ITEMS */
+    .nav-menu ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+                /* justify-content: flex-start; */
+        margin-right: 10%;
+        width: 100%; /* FIXED missing ; */
+        gap: 5px;
+    }
+
+    .nav-menu li a {
+        padding: 10px;
+        display: block;
+        width: 100%;
+    }
+
+    /* SHOW WHEN ACTIVE */
+    .nav-menu.active {
+        display: flex;
+        flex-direction: column;
+        margin-left: -100%;
+    }
+
+    /* SECTION HEADER */
+    .section-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* PROFILE IMAGE */
+    .profile-img {
+        width: 180px;
+        height: 180px;
+    }
+
+    /* HOME IMAGES */
+    .home-images {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .home-img {
+        width: 130px;
+        height: 130px;
+    }
+
+    /* ICON FIX */
+    .icon-img {
+        margin-left: 140px;
+    }
+
+    .expertise {
+        margin-left: 3px;
+    }
+    /* TEXT CENTER FIX */
+    .home-content h2 {
+        font-size: 26px;
+        text-align: center;
+    }
+
+    .section-description {
+        text-align: center;
+        font-size: 15px;
+    }
+}

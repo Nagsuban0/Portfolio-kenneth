@@ -44,18 +44,27 @@
     <!-- RIGHT SIDE -->
     <div class="right-side">
 
-        <!-- NAVIGATION (TOP) -->
-        <aside class="nav">
-            <nav class="nav-menu">
-                <ul>
-                    <li><a href="home.html">Home</a></li>
-                    <li><a href="education.html">Education</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="certificate.html">Certificate</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </aside>
+<!-- NAVIGATION (TOP) -->
+<aside class="nav">
+
+    <!-- BURGER BUTTON -->
+    <div class="burger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <nav class="nav-menu" id="navMenu">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="certificate.html">Certificate</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+</aside>
         
                  <!---- right panel Home nav ---->
         <div class="right-panel">
@@ -139,5 +148,11 @@
     </section>
 
 <script src="assets/js/modal.js"></script>
+<script>
+function toggleMenu() {
+    const menu = document.querySelector(".nav-menu");
+    menu.classList.toggle("active");
+}
+</script>
 </body>
 </html>
